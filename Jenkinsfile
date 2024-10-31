@@ -79,7 +79,7 @@ pipeline{
                script{
                    
                    // dockerBuild("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
-                sh "sudo docker image build -t ${params.DockerHubUser}/${params.ImageName}:${params.ImageTag} ."
+            sh "echo '${your_password}' | sudo -S docker image build -t ${params.DockerHubUser}/${params.ImageName}:${params.ImageTag} ."
 
                }
             }
