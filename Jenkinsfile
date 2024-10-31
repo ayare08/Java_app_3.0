@@ -78,7 +78,9 @@ pipeline{
             steps{
                script{
                    
-                   dockerBuild("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
+                   // dockerBuild("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
+                sh "sudo docker image build -t ${params.DockerHubUser}/${params.ImageName}:${params.ImageTag} ."
+
                }
             }
         }
